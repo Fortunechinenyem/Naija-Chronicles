@@ -1,10 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  HistoricalEvent,
-  TimelineFilters as TimelineFiltersType,
-} from "@/types/historical";
+import { TimelineFilters as TimelineFiltersType } from "@/types/historical";
 import { historicalEvents } from "@/lib/historical-data";
 import { TimelineFilters } from "./TimelineFilters";
 import { TimelineEvent } from "./TimelineEvent";

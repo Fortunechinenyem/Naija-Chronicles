@@ -7,13 +7,13 @@ import { FlagDesign } from "@/types/flag";
 
 interface FlagCanvasProps {
   design: FlagDesign;
-  onDesignChange: (design: FlagDesign) => void;
+  onDesignChange: (_design: FlagDesign) => void;
   className?: string;
 }
 
 export const FlagCanvas = ({
   design,
-  onDesignChange,
+
   className,
 }: FlagCanvasProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

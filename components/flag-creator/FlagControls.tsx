@@ -66,7 +66,6 @@ export const FlagControls = ({
 
   return (
     <Card className="p-6 space-y-6">
-      {/* Color Selection */}
       <div>
         <h3 className="font-semibold mb-3">Flag Colors</h3>
         <div className="grid grid-cols-2 gap-4">
@@ -112,7 +111,6 @@ export const FlagControls = ({
         </div>
       </div>
 
-      {/* Pattern Selection */}
       <div>
         <h3 className="font-semibold mb-3">Patterns</h3>
         <div className="flex gap-2 flex-wrap">
@@ -181,12 +179,15 @@ export const FlagControls = ({
         />
       </div>
 
-      {/* Action Buttons */}
       <div className="flex gap-4 pt-4">
-        <Button onClick={onSave} className="flex-1">
+        <Button onClick={onSave ?? (() => {})} className="flex-1">
           Save Flag
         </Button>
-        <Button variant="secondary" onClick={onShare} className="flex-1">
+        <Button
+          variant="secondary"
+          onClick={onShare ?? (() => {})}
+          className="flex-1"
+        >
           Share Flag
         </Button>
       </div>

@@ -21,7 +21,10 @@ export const TimelineFilters = ({
   filters,
   onFiltersChange,
 }: TimelineFiltersProps) => {
-  const updateFilter = (key: keyof TimelineFiltersType, value: any) => {
+  const updateFilter = (
+    key: keyof TimelineFiltersType,
+    value: TimelineFiltersType[keyof TimelineFiltersType]
+  ) => {
     onFiltersChange({ ...filters, [key]: value });
   };
 
@@ -36,7 +39,9 @@ export const TimelineFilters = ({
           <input
             type="text"
             value={filters.searchQuery}
-            onChange={(e) => updateFilter("searchQuery", e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              updateFilter("searchQuery", e.target.value)
+            }
             placeholder="Search historical events..."
             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-naija-green"
           />
@@ -49,7 +54,7 @@ export const TimelineFilters = ({
           </label>
           <select
             value={filters.decade}
-            onChange={(e) =>
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
               updateFilter(
                 "decade",
                 e.target.value === "all" ? "all" : parseInt(e.target.value)
