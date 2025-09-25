@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import * as fabric from "fabric";
 
-import { FlagDesign } from "@/types/flag";
+import { FlagDesign, FlagSymbol } from "@/types/flag";
 
 interface FlagCanvasProps {
   design: FlagDesign;
@@ -96,7 +96,7 @@ export const FlagCanvas = ({
     return null;
   };
 
-  const createSymbol = (symbol: any): fabric.Object | null => {
+  const createSymbol = (symbol: FlagSymbol): fabric.Object | null => {
     switch (symbol.type) {
       case "star":
         return new fabric.Polygon(
