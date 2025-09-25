@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import fabric from "fabric";
+import * as fabric from "fabric";
+
 import { FlagDesign } from "@/types/flag";
 
 interface FlagCanvasProps {
